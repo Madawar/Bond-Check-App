@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Airline;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class AirlineCreator extends Component
