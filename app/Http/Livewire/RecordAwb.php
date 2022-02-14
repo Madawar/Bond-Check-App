@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Airline;
 use App\Models\BondCheck;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class RecordAwb extends Component
@@ -63,6 +64,7 @@ class RecordAwb extends Component
         $this->validate();
         // Execution doesn't reach here if validation fails.
         $this->bondcheck->date_captured = $this->bondcheck->date_captured  ?? Carbon::today()->format('Y-m-d');
+        $this->bondcheck->captured_by = Auth::user()->displayname[0];
         $this->bondcheck->save();
         $this->bondcheck = new BondCheck();
         $this->bondcheck->date_captured = Carbon::today()->format('Y-m-d');
