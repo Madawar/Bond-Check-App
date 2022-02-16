@@ -92,7 +92,7 @@ class BondCheckReport extends Component
         }
         $awbs = $this->awbs;
         $file_name =  $for . 'BondCheck-' . $date . '-' . Str::random(4) . '.pdf';
-        $pdf = PDF::loadView('livewire.reports.report', compact('awbs', 'for', 'date_formatted'))->setPaper('a4', 'potrait');
+        $pdf = PDF::loadView('livewire.reports.report', compact('awbs', 'for', 'date_formatted'))->setPaper('a4', 'landscape');
         $pdf->save(storage_path('app/public/' . $file_name));
         return [$file_name, $date_formatted, $rrdate];
     }

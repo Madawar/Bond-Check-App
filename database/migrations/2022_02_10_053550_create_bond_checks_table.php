@@ -22,6 +22,10 @@ return new class extends Migration
             $table->date('date_captured');
             $table->string('aod')->nullable();
             $table->string('nop')->nullable();
+            $table->string('weight')->nullable();
+            $table->string('dimensions')->nullable();
+            $table->string('shc')->nullable();
+            $table->string('remarks')->nullable();
             $table->string('captured_by')->nullable();
             $table->foreign('airline_id')->references('id')->on('airlines');
             $table->foreign('awb_id')->references('id')->on('awbs');

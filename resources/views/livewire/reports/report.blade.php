@@ -76,6 +76,18 @@
                         AOD</th>
                     <th scope="col"
                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        SHC</th>
+                    <th scope="col"
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Dimensions</th>
+                    <th scope="col"
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Weight</th>
+                    <th scope="col"
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Remarks</th>
+                    <th scope="col"
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Airline</th>
 
                 </tr>
@@ -94,6 +106,14 @@
                             {{ $awb->nop }}</td>
                         <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             {{ $awb->aod }}</td>
+                        <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            {{ $awb->shc }}</td>
+                        <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            {{ $awb->dimensions }}</td>
+                        <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            {{ $awb->weight }}</td>
+                        <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            {{ $awb->remarks }}</td>
                         <td class="px-3 py-1.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             {{ $awb->airline->airline_name }}</td>
 

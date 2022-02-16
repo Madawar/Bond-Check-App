@@ -21,6 +21,10 @@ class RecordAwb extends Component
         'bondcheck.aod' => 'required|size:3',
         'bondcheck.nop' => 'required|numeric',
         'bondcheck.date_captured' => 'required|date',
+        'bondcheck.dimensions' => '',
+        'bondcheck.weight' => 'nullable|numeric',
+        'bondcheck.shc' => 'nullable|size:3',
+        'bondcheck.remarks' => ''
     ];
 
     public function mount($slug = null)

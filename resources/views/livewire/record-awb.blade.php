@@ -45,6 +45,22 @@
                 <x-date label='Date Of Bondcheck' :options="[]" wire:model='bondcheck.date_captured'
                     name='bondcheck.date_captured' placeholder="Date" />
             </div>
+
+            <div class="col-span-12 sm:col-span-4">
+                <x-input label='Weight' wire:model='bondcheck.weight' name='bondcheck.weight' placeholder="Weight" />
+            </div>
+            <div class="col-span-12 sm:col-span-4">
+                <x-input label='Weight' wire:model='bondcheck.dimensions' name='bondcheck.dimensions'
+                    placeholder="Dimensions" />
+            </div>
+            <div class="col-span-12 sm:col-span-4">
+                <x-input label='SHC' wire:model='bondcheck.shc' name='bondcheck.shc'
+                    placeholder="Special Handling Codes" />
+            </div>
+            <div class="col-span-12 sm:col-span-12">
+                <x-input label='Remarks' wire:model='bondcheck.remarks' name='bondcheck.remarks'
+                    placeholder="Remarks" />
+            </div>
             <div class="col-span-12 sm:col-span-12">
                 <button type="button" wire:click='submit'
                     class=" w-full text-center   px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Record
@@ -54,7 +70,7 @@
     </div>
 
     <div>
-        <div class="flex flex-col">
+        <div class="flex flex-col overflow-hidden">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="shadow overflow-hidden border-b border-gray-200 ">
@@ -79,6 +95,18 @@
                                     <th scope="col"
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         AOD</th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        SHC</th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Dimensions</th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Weight</th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Remarks</th>
                                     <th scope="col" class="relative px-6 py-3">
                                         <span class="sr-only">Edit</span>
                                     </th>
@@ -92,7 +120,7 @@
                                             {{ $loop->index + 1 }}
 
                                         </td>
-                                        <td
+                                        <td wire:click='edit({{ $awb->id }})'
                                             class="px-6 py-3 text-left text-sm font-medium text-gray-900 uppercase tracking-wider">
                                             {{ substr($awb->awb_no, 0, 3) }}-{{ substr($awb->awb_no, 3) }}</td>
                                         <td
@@ -107,6 +135,18 @@
                                         <td
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             {{ $awb->aod }}</td>
+                                        <td
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            {{ $awb->shc }}</td>
+                                        <td
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            {{ $awb->dimensions }}</td>
+                                        <td
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            {{ $awb->weight }}</td>
+                                        <td
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            {{ $awb->remarks }}</td>
                                         <td class="relative px-6 py-3">
                                             <a href="#" class="text-indigo-600 hover:text-indigo-900"
                                                 wire:click='edit({{ $awb->id }})'>Edit</a>

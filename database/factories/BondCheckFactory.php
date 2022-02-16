@@ -25,6 +25,10 @@ class BondCheckFactory extends Factory
             'captured_by' => $this->faker->name,
             'aod' => $this->faker->randomElement(['DXB', 'ADD', 'TNR', 'LAD', 'MGQ', 'JNB']),
             'nop' => $this->faker->numberBetween(1, 4),
+            'SHC' => $this->faker->randomElement(['DGR', 'PEP', 'HEA', 'AVI', 'PEF', 'PIL']),
+            'weight' => $this->faker->biasedNumberBetween(100, 100),
+            'dimensions' => $this->faker->biasedNumberBetween(0, 100) . 'X' . $this->faker->biasedNumberBetween(0, 100) . 'X' . $this->faker->biasedNumberBetween(0, 100),
+            'remarks' => $this->faker->sentence(3),
         ];
     }
 }

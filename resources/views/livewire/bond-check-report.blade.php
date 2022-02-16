@@ -93,7 +93,7 @@
 
 
     <div>
-        <div class="flex flex-col">
+        <div class="flex flex-col overflow-hidden">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="shadow overflow-hidden border-b border-gray-200 ">
@@ -118,7 +118,18 @@
                                     <th scope="col"
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         AOD</th>
-
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        SHC</th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Dimensions</th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Weight</th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Remarks</th>
                                     <th scope="col"
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Date</th>
@@ -152,6 +163,18 @@
                                         <td
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             {{ $awb->aod }}</td>
+                                        <td
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            {{ $awb->shc }}</td>
+                                        <td
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            {{ $awb->dimensions }}</td>
+                                        <td
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            {{ $awb->weight }}</td>
+                                        <td
+                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            {{ $awb->remarks }}</td>
                                         <td
                                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             {{ Carbon\Carbon::parse($awb->date_captured)->format('d-M-y') }}</td>
