@@ -37,7 +37,8 @@ class AirlineCreator extends Component
     {
         $this->validate();
         // Execution doesn't reach here if validation fails.
-        $this->airline->airline_emails =  explode(',', $this->airline->airline_emails);
+        $this->airline->airline_emails =  json_encode(explode(',', $this->airline->airline_emails));
+        // dd($this->airline);
         $this->airline->save();
         $this->airline = new Airline();
     }
