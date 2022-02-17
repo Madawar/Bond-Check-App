@@ -113,6 +113,6 @@ class BondCheckReport extends Component
         $date_formatted = $returned[1];
         $rrdate = $returned[2];
         $airline = Airline::find($this->airline);
-        Mail::to(json_decode($airline->airline_emails))->send(new SendReport($airline->id, storage_path('app/public/' . $file_name), $date_formatted, $rrdate));
+        Mail::to(json_decode($airline->airline_emails))->cc(['exports@afske.aero'])->bcc(['dwanyoike@afske.aero'])->send(new SendReport($airline->id, storage_path('app/public/' . $file_name), $date_formatted, $rrdate));
     }
 }
