@@ -109,7 +109,10 @@
                         <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             {{ $awb->shc }}</td>
                         <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            {{ $awb->dimensions }}</td>
+                            @foreach (explode(',', $awb->dimensions) as $dims)
+                                {{ $dims }}
+                            @endforeach
+                        </td>
                         <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             {{ $awb->weight }}</td>
                         <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">

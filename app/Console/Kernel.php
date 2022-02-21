@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('bondcheck:reconcile')->everyMinute();
-        $schedule->command('bondcheck:performed')->between('11:00', '14:00')->everyThirtyMinutes();
+        $schedule->command('bondcheck:performed')->weekdays()->between('11:00', '15:00')->everyThirtyMinutes();
     }
 
     /**

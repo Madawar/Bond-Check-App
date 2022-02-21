@@ -46,7 +46,7 @@ class CheckIfBondCheckPerfomed extends Command
             $query->where('for_date', Carbon::today()->format('Y-m-d'))->where('send_date', Carbon::today()->format('Y-m-d'));
         })->get();
         if (!$airlines->isEmpty()) {
-            Mail::to(env('MAIL_TEAM_ADDRESS'))->send(new BondCheckReminder($airlines));
+            Mail::to(env('MAIL_TEAM_ADDRESS'))->cc(['mnjoroge@afske.aero', 'mwalker@afske.aero', 'cgwaro@afske.aero'])->send(new BondCheckReminder($airlines));
         }
         return 0;
     }
