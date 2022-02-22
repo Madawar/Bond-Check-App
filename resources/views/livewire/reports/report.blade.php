@@ -111,6 +111,9 @@
                         <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             @foreach (explode(',', $awb->dimensions) as $dims)
                                 {{ $dims }}
+                                @if (!$loop->last)
+                                    ,
+                                @endif
                             @endforeach
                         </td>
                         <td class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">

@@ -54,13 +54,28 @@ class RecordAwb extends Component
     public function chooseSuggestion($awb)
     {
         $sg = BondCheck::where('awb_no', $awb)->latest()->first();
+        $this->loadOld($sg);
+    }
+
+    public function loadOld($sg)
+    {
         $this->bondcheck->airline_id  = $sg->airline_id;
         $this->bondcheck->awb_no  = $sg->awb_no;
         $this->bondcheck->location = $sg->location;
         $this->bondcheck->aod = $sg->aod;
         $this->bondcheck->nop = $sg->nop;
+        $this->bondcheck->dimensions = $sg->dimensions;
+        $this->bondcheck->weight = $sg->weight;
+        $this->bondcheck->shc = $sg->shc;
+        $this->bondcheck->remarks = $sg->remarks;
     }
 
+    public function quickFetch()
+    {
+        $partial_awb = '%' . $this->bondcheck->awb_no;
+        $sg = BondCheck::where('awb_no', 'like', $partial_awb)->latest()->first();
+        $this->loadOld($sg);
+    }
 
     public function submit()
     {
