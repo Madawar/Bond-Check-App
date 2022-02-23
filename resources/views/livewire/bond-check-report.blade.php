@@ -36,7 +36,7 @@
                             x-cloak x-show="open" @click.away="open=false">
                             <div class="py-1" role="none">
                                 <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                                @if ($this->airlineName)
+                                @if ($this->airlineName && $this->date != '')
                                     <div wire:click='sendReport' @click="open=false"
                                         class="text-gray-700 block px-4 py-2 text-sm cursor-pointer hover:bg-indigo-700"
                                         role="menuitem" tabindex="-1" id="option-menu-item-0"> Send Email To
